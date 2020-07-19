@@ -36,7 +36,8 @@ public class AgendaDAO {
 			stmt.setString(4, agenda.getEndereco());
 			
 			stmt.execute();
-			stmt.conexao.commit();
+			//stmt.conexao.commit();
+			stmt.close();
 		} catch (SQLException e) {
 			this.conexao.rollback();
 			throw e;
@@ -61,7 +62,7 @@ public class AgendaDAO {
 		} catch (SQLException ex) {
 			JOptionPane.showMessageDialog(null, "Erro ao atualizar: " + ex);
 		} finally {
-			ConexaoMysqlJDBC.close();
+			this.conexao.close();
 		}
 	}
 	

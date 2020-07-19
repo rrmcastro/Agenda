@@ -7,7 +7,8 @@ public interface ConexaoJDBC {
 	
 	public Connection getConnection();
 	
-	public void close();
+	public static void close() {
+	}
 	
 	public void commit() throws SQLException;
 	

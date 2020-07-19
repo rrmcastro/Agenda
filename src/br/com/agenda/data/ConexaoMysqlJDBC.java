@@ -29,7 +29,7 @@ public class ConexaoMysqlJDBC implements ConexaoJDBC {
 	}	
 	
 
-	public void close(Connection con) {
+	public static void close(Connection con) {
 		try {
 			if (con != null) {
 				con.close();
@@ -39,7 +39,7 @@ public class ConexaoMysqlJDBC implements ConexaoJDBC {
 		}
 	}
 	
-	public void close(Connection con, PreparedStatement stmt) {
+	public static void close(Connection con, PreparedStatement stmt) {
 		
 		close(con);
 		
@@ -52,7 +52,7 @@ public class ConexaoMysqlJDBC implements ConexaoJDBC {
 		}
 	}
 	
-	public void close(Connection con, PreparedStatement stmt, ResultSet rs) {
+	public static void close(Connection con, PreparedStatement stmt, ResultSet rs) {
 		
 		close(con, stmt);
 	
